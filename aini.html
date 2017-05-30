@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 100%;
+			height: 100%;
+		}
+		#box .content{
+			width: 400px;
+			margin:20px 50px;
+			background:pink;
+			cursor: pointer;
+
+		}
+        .header h2{
+        	background: red;
+        	text-indent: 10px;
+        	color: #fff;
+        	font-size: 21px;
+        	line-height: 40px;
+        	white-space: nowrap;
+
+
+        }
+        
+        /* .mian ul  span.active{
+        	width: 15px;
+        	height: 15px;
+        	margin-left: 8px;
+        	line-height: 15px;
+             margin-top: 10px;
+        	display: block;
+        	text-align: center;
+        	font-size: 14px;
+        	color: #fff;
+        	border-radius: 100%;
+        	background-color: blue;
+        }
+        .mian ul li{
+            border: 1px solid #000;
+            list-style: none;
+            margin: -18px 20px;
+            margin-left: 25px;
+        	color: red;
+        } */
+        .mian .mian-l{
+        	
+        	float: left;
+        }
+        .mian-l span{
+        	width: 18px;
+        	height: 18px;
+        	display: block;
+        	margin: 7px 0 0 15px;
+        	text-align: center;
+        	font-size:14px;
+        	color: #fff;
+        	line-height: 18px;
+        	border-radius: 100%;
+        	background: blue;
+        }
+        .mian-l span.active{
+        	background: red;
+        }
+        .mian .mian-r{
+        	float: left;
+        	
+        }
+        .mian .mian-r ul li{
+        	list-style: none;
+        	margin: 6px 5px;
+        	border-bottom: 1px dashed #ccc;
+        	
+        }
+        .mian-r ul li.on{
+        	color: red;
+        }
+	</style>
+</head>
+<body>
+<div id="box">
+ 	<div class="content">
+ 		<div class="header">
+ 			<h2>大家都喜欢买的美容品</h2>
+ 		</div>
+ 		<div class="mian">
+ 		    <div class="mian-l">
+	 		    	<span class="active">1</span>
+	 		    	<span>2</span>
+	 		    	<span>3</span>
+	 		    	<span>4</span>
+	 		    	<span>5</span>
+	 		    	<span>6</span>
+	 		    	<span>7</span>
+	 		    	<span>8</span>
+	 		    	<span>9</span>
+ 		    </div>
+ 		    <div class="mian-r">
+	 			<ul>
+	 				<li class="on">雅诗兰黛即时修护眼部精华霜15ml</li>
+	 				<li>伊丽莎白雅顿显效复合活肤霜</li>
+	 				<li>OLAY玉兰油多效修复霜</li>
+	 				<li>巨型一号丝瓜水320ML</li>
+	 				<li>倩碧保湿肌肤水2号200ML</li>
+	 				<li>FEFEFFFFEEEE</li>
+	 				<li>成都成都</li>
+	 				<li>成都成都</li>
+	 				<li>成都根本不</li>
+	 			</ul>
+            </div>
+ 		</div>
+ 	</div>
+</div>
+ <script  type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+ 	<script >
+ 		 $(function(){
+           $(".mian-r ul li ").hover(function(){
+           	  var i = $(this).index();
+           	  $(this).addClass('on').siblings().removeClass('on');
+           	  $(".mian-l span ").eq(i).addClass('active').siblings().removeClass('active');
+           });
+
+           $(".mian-l span ").hover(function(){
+           	  var i = $(this).index();
+           	  $(this).addClass('active').siblings().removeClass('active');
+           	  $(".mian-r ul li ").eq(i).addClass('on').siblings().removeClass('on');
+           });
+ 		 });
+ 	</script>
+ 
+</body>
+</html>
